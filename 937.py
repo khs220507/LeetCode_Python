@@ -1,6 +1,6 @@
 from typing import List
 
-logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"]
+logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero", "let3 3 6"]
 
 
 class Solution:
@@ -12,9 +12,15 @@ class Solution:
             else:
                 letters.append(log)
 
-            # 람다식 이해가 안간다...
-            letters.sort(key=lambda x : (x.split()[1:], x.split()[0]))
-            return letters + digits
+        letters.sort(key=lambda x : (x.split()[1:], x.split()[0]))
+        return letters + digits
 
+
+
+solution = Solution()
+
+result = solution.reorderLogFiles(logs)
+
+print(result)
 
 
